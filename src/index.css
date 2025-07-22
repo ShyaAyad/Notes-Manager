@@ -1,11 +1,19 @@
 * {
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
+}
+
+.dashboard{
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
 }
 
 .navbar {
+  position: absolute;
   background-color: black;
-  width: 25%;
+  width: 20%;
   height: 100vh;
 }
 
@@ -24,7 +32,7 @@
   color: #fff;
   width: 65%;
   background-color: #fff;
-  margin: 10px;
+  margin: 20px;
   padding: 5px;
   border-radius: 30px;
   cursor: pointer;
@@ -36,7 +44,19 @@
   transition: all 0.3s ease-in-out;
 }
 
+.search-field{
+  position: absolute;
+  left: 20%;
+  width: 75%;
+  height: 100vh;
+  margin: 2%;
+}
+
 @media screen and (max-width: 768px) {
+  .dashboard {
+    grid-template-columns: 1fr;
+  }
+
   .navbar {
     width: 100%;
     height: auto;
@@ -54,5 +74,11 @@
     justify-content: center;
     width: auto;
     gap: 15px;
+  }
+  .search-field{
+    position: relative;
+    top: 27%;
+    left: 0;
+    width: 95%;
   }
 }
