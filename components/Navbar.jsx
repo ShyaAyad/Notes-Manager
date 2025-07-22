@@ -9,12 +9,12 @@ const Navbar = () => {
   return (
     <div className="navbar">
       <div className="logo">
-        <Link to="/">
+        <Link to="/" className="logo">
           <Avatar size="large" src={logo} style={{ margin: "15px" }} />
+          <Title level={2} style={{ color: "white" }}>
+            Notes
+          </Title>
         </Link>
-        <Title level={2} style={{ color: "white" }}>
-          Notes
-        </Title>
       </div>
 
       <div className="nav-icons">
@@ -22,10 +22,12 @@ const Navbar = () => {
           <HomeOutlined className="home-icon" />
           Home
         </Title>
-        <Title level={4} className="icon">
-          <UserOutlined className="user-icon" />
-          Account
-        </Title>
+        <Link to="login">
+          <Title level={4} className="icon">
+            <UserOutlined className="user-icon" />
+            Account
+          </Title>
+        </Link>
       </div>
     </div>
   );
