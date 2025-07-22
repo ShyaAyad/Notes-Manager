@@ -1,15 +1,58 @@
-*{
+* {
   padding: 0;
   margin: 0;
 }
 
-.navbar{
+.navbar {
   background-color: black;
-  width: 300px;
+  width: 25%;
   height: 100vh;
 }
 
-.logo{
+.logo {
   display: flex;
   align-items: center;
+}
+
+.home-icon,
+.user-icon {
+  color: black;
+  margin: 5px 15px;
+}
+
+.icon {
+  color: #fff;
+  width: 65%;
+  background-color: #fff;
+  margin: 10px;
+  padding: 5px;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.icon:hover {
+  background-color: #f0f0f0;
+  transform: scale(1.1);
+  transition: all 0.3s ease-in-out;
+}
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px 20px;
+  }
+
+  .logo {
+    margin: 0;
+  }
+
+  .nav-icons {
+    flex-direction: row;
+    justify-content: center;
+    width: auto;
+    gap: 15px;
+  }
 }
