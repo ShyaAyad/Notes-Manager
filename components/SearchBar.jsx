@@ -5,7 +5,7 @@ const { Search } = Input;
 const SearchBar = () => {
   return (
     <div className="search-field">
-      <Search placeholder="search note" className="search-input" />
+      <Search placeholder="search note"/>
     </div>
   )
 }

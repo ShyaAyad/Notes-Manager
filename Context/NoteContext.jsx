@@ -14,7 +14,7 @@ const NoteContext = (props) => {
       id: Date.now(),
       title,
       text,
-      date: new Date().toString().slice(0, 16),
+      date: new Date().toLocaleString()
     };
     setNotes((prevNote) => [...prevNote, newNote]);
   };
@@ -22,6 +22,10 @@ const NoteContext = (props) => {
   const deleteNote = (noteId) => {
     const filteredNotes = notes.filter(note => note.id !== noteId); // loop through each note object and compare the ids to delete
     setNotes(filteredNotes);
+  }
+
+  const editNotes = () => {
+
   }
 
   const values = { notes, setNotes, addNotes, deleteNote };

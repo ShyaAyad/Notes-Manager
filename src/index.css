@@ -53,7 +53,6 @@ body {
   position: absolute;
   left: 20%;
   width: 75%;
-  height: 90vh;
   margin: 2%;
 }
 
@@ -182,31 +181,31 @@ body {
   margin-top: 10px;
 }
 
-.edite-btn {
-  padding: 4px 8px;
-  border: none;
-  border-radius: 10px;
-  font-size: 1.1rem;
-  color: #fff;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  background-color: rgb(33, 165, 33);
-}
-
+.edite-btn,
 .delete-btn {
   padding: 4px 8px;
-  border: none;
+  border: 1px solid black;
   border-radius: 10px;
   font-size: 1.1rem;
-  color: #fff;
+  width: 20%;
+  color: black;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  background-color: rgb(204, 31, 31);
+  background-color: #fff;
+  transition: all 0.3s ease-out;
+}
+
+.edite-btn:hover,
+.delete-btn:hover{
+  background-color: black;
+  color: white;
 }
 
 .sort-btn{
-  margin-top: 5px;
+  margin: 5px 0px;
   background-color: black;
   color: #fff;
   padding: 4px 8px;
+  font-size: 15px;
   border-radius: 10px;
 }
 
