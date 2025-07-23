@@ -7,7 +7,7 @@ const NoteCard = () => {
   return (
     <div>
       {notes.map((note) => (
-        <div>
+        <div key={note.id} className="individual-note">
           <h1>{note.title}</h1>
           <p>{note.text}</p>
         </div>
