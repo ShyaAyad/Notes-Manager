@@ -18,11 +18,13 @@ const Navbar = () => {
       </div>
 
       <div className="nav-icons">
-        <Title level={4} className="icon">
-          <HomeOutlined className="home-icon" />
-          Home
-        </Title>
-        <Link to="login">
+        <Link to="/dashboard" style={{textDecoration: "none"}}>
+          <Title level={4} className="icon">
+            <HomeOutlined className="home-icon" />
+            Home
+          </Title>
+        </Link>
+        <Link to="login" style={{textDecoration: "none"}}>
           <Title level={4} className="icon">
             <UserOutlined className="user-icon" />
             Account
