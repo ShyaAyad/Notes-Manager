@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 
-body{
+body {
   background-color: #dedede;
 }
 
@@ -143,17 +143,17 @@ body{
   background-color: #fff;
 }
 
-.note-form-container{
+.note-form-container {
   width: 100%;
 }
 
-.note-form-container textarea{
+.note-form-container textarea {
   width: 100%;
   padding: 10px;
   resize: none;
 }
 
-.submit-btn{
+.submit-btn {
   background-color: black;
   color: #ffff;
   font-size: 1.1rem;
@@ -162,44 +162,52 @@ body{
   border-radius: 5px;
 }
 
-.notes-list{
+.notes-list {
   position: absolute;
   left: 25%;
   top: 80px;
-  width: 30%; 
+  width: 30%;
 }
 
-.individual-note{
+.individual-note {
   background-color: #fff;
   margin-bottom: 10px;
-  padding: 10px; 
+  padding: 10px;
   border-radius: 10px;
 }
 
-.changing-btns{
+.changing-btns {
   display: flex;
   justify-content: space-around;
   margin-top: 10px;
 }
 
-.edite-btn{
+.edite-btn {
   padding: 4px 8px;
   border: none;
   border-radius: 10px;
   font-size: 1.1rem;
   color: #fff;
-  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   background-color: rgb(33, 165, 33);
 }
 
-.delete-btn{
+.delete-btn {
   padding: 4px 8px;
   border: none;
   border-radius: 10px;
   font-size: 1.1rem;
   color: #fff;
-  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   background-color: rgb(204, 31, 31);
+}
+
+.sort-btn{
+  margin-top: 5px;
+  background-color: black;
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 10px;
 }
 
 @media screen and (max-width: 768px) {
@@ -238,5 +246,12 @@ body{
     top: 300px;
     width: 45%;
     height: 60vh;
+  }
+
+  .notes-list {
+    position: absolute;
+    left: 5%;
+    top: 300px;
+    width: 40%;
   }
 }

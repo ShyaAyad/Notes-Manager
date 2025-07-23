@@ -6,9 +6,8 @@ export const noteContext = createContext(null); // this is used to access contex
 // provider component
 const NoteContext = (props) => {
   const [notes, setNotes] = useState([]); // for storing the notes that user adds
-
   console.log(notes);
-
+  
   const addNotes = (title, text) => {
     // for adding a new note we add the title and the text to an object
     const newNote = {
