@@ -20,7 +20,12 @@ const NoteContext = (props) => {
     setNotes((prevNote) => [...prevNote, newNote]);
   };
 
-  const values = { notes, setNotes, addNotes };
+  const deleteNote = (noteId) => {
+    const filteredNotes = notes.filter(note => note.id !== noteId); // loop through each note object and compare the ids to delete
+    setNotes(filteredNotes);
+  }
+
+  const values = { notes, setNotes, addNotes, deleteNote };
 
   return (
     <noteContext.Provider value={values}>{props.children}</noteContext.Provider>

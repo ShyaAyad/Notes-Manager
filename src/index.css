@@ -176,6 +176,32 @@ body{
   border-radius: 10px;
 }
 
+.changing-btns{
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+
+.edite-btn{
+  padding: 4px 8px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  color: #fff;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  background-color: rgb(33, 165, 33);
+}
+
+.delete-btn{
+  padding: 4px 8px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  color: #fff;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  background-color: rgb(204, 31, 31);
+}
+
 @media screen and (max-width: 768px) {
   .dashboard {
     grid-template-columns: 1fr;
