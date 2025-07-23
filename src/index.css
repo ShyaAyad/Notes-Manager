@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+body{
+  background-color: #dedede;
+}
+
 .dashboard {
   position: relative;
   display: grid;
@@ -74,7 +78,7 @@
   border-radius: 20px;
 }
 
-.form h1{
+.form h1 {
   font-size: 2.5rem;
   margin-bottom: 15px;
   color: black;
@@ -103,26 +107,58 @@
 
 .span-field {
   position: absolute;
-  right: 0.75rem; 
-  top: 50%; 
-  transform: translateY(-50%); 
-  color: #1f2937; 
+  right: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #1f2937;
   cursor: pointer;
 }
 
-.btn{
-  margin-top: 1.25rem;     
+.btn {
+  margin-top: 1.25rem;
   margin-bottom: 1.25rem;
-  background-color: black; 
-  padding-left: 1.5rem;    
+  background-color: black;
+  padding-left: 1.5rem;
   padding-right: 1.5rem;
-  padding-top: 0.5rem;    
+  padding-top: 0.5rem;
   padding-bottom: 0.5rem;
-  border-radius: 1.5rem;    
-  color: white;            
-  font-family: monospace;   
-  font-weight: bold;       
+  border-radius: 1.5rem;
+  color: white;
+  font-family: monospace;
+  font-weight: bold;
   width: 100%;
+}
+
+/* main container around the form in dashboard component */
+.note-editor {
+  position: absolute;
+  left: 60%;
+  top: 80px;
+  width: 37%;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  padding: 15px;
+  height: 85vh;
+  background-color: #fff;
+}
+
+.note-form-container{
+  width: 100%;
+}
+
+.note-form-container textarea{
+  width: 100%;
+  padding: 10px;
+  resize: none;
+}
+
+.submit-btn{
+  background-color: black;
+  color: #ffff;
+  font-size: 1.1rem;
+  padding: 5px;
+  margin-top: 5px;
+  border-radius: 5px;
 }
 
 @media screen and (max-width: 768px) {
@@ -150,8 +186,16 @@
   }
   .search-field {
     position: relative;
-    top: 27%;
+    top: 30%;
     left: 0;
     width: 95%;
+  }
+
+  .note-editor {
+    position: absolute;
+    left: 50%;
+    top: 300px;
+    width: 45%;
+    height: 60vh;
   }
 }
