@@ -66,7 +66,7 @@ const NoteCard = () => {
             <h1>{note.title}</h1>
             <p>{note.text}</p>
             <div className="changing-btns">
-              <button className="edit-btn">
+              <button onClick={() => handleEdit(note.id)} className="edit-btn">
                 <EditOutlined />
               </button>
               <button

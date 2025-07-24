@@ -1,18 +1,10 @@
 import { useContext } from "react";
 import { noteContext } from "../Context/NoteContext";
+import { editContext } from "../Context/EditContext";
 
 const EditNote = () => {
   const { notes, setNotes } = useContext(noteContext);
-  const [titleValue, setTitleValue] = useState(notes.title);
-  const [content, setContent] = useState(notes.text);
-
-  const handleEdit = () => {
-    const editedNote = {
-        title: titleValue,
-        text: content
-    };
-    setNotes(handleEdit);
-  }
+  const { titleValue, content, handleEdit } = useContext(editContext);
 
   return (
     <div className="note-form-container">

@@ -5,17 +5,20 @@ import Register from "../components/Register";
 import NoteContext from "../Context/NoteContext";
 import { Route, Routes } from "react-router-dom";
 import SearchContext from "../Context/SearchContext";
+import EditContext from "../Context/EditContext";
 
 function App() {
   return (
     <NoteContext>
       <SearchContext>
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Dashboard />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-        </Routes>
+        <EditContext>
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<Dashboard />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+          </Routes>
+        </EditContext>
       </SearchContext>
     </NoteContext>
   );

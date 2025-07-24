@@ -5,15 +5,15 @@ export const noteContext = createContext(null); // this is used to access contex
 
 // provider component
 const NoteContext = (props) => {
-  const [notes, setNotes] = useState(() => {
-    const savedNotes = localStorage.getItem("note");
-    return savedNotes ? JSON.parse(savedNotes) : [];
+  const [notes, setNotes] = useState(() => { // use state runs a function for storing the note
+    const savedNotes = localStorage.getItem("note"); 
+    return savedNotes ? JSON.parse(savedNotes) : []; // if note is saved then parse the note to an array else return an empty array
   }); // for storing the notes that user adds
   console.log(notes);
 
-  useEffect(() => {
-    localStorage.setItem("note" ,JSON.stringify(notes));
-  }, [notes])
+  useEffect(() => { // useEffect re-renders whenever the note on save changes
+    localStorage.setItem("note" ,JSON.stringify(notes)); 
+  }, [notes]);
   
   const addNotes = (title, text) => {
     // for adding a new note we add the title and the text to an object
