@@ -1,12 +1,19 @@
-import { createContext } from "react";
+import { createContext, useEffect } from "react";
 import { useState } from "react";
 
 export const noteContext = createContext(null); // this is used to access context
 
 // provider component
 const NoteContext = (props) => {
-  const [notes, setNotes] = useState([]); // for storing the notes that user adds
+  const [notes, setNotes] = useState(() => {
+    const savedNotes = localStorage.getItem("note");
+    return savedNotes ? JSON.parse(savedNotes) : [];
+  }); // for storing the notes that user adds
   console.log(notes);
+
+  useEffect(() => {
+    localStorage.setItem("note" ,JSON.stringify(notes));
+  }, [notes])
   
   const addNotes = (title, text) => {
     // for adding a new note we add the title and the text to an object
