@@ -1,8 +1,10 @@
 import { useContext } from "react";
 import { noteContext } from "../Context/NoteContext";
+import { theSearchContext } from "../Context/SearchContext";
 
 const NoteCard = () => {
   const { notes, setNotes, deleteNote } = useContext(noteContext);
+  const { searchTerm, setSearchTerm } = useContext(theSearchContext);
 
   const sortByTitle = () => {
     // by spreading we change the new array leaving the original as it is
@@ -37,7 +39,7 @@ const NoteCard = () => {
         <option value="title">Sort by name</option>
         <option value="date">Sort by date</option>
       </select>
-      {notes.map((note) => (
+      {notes.filter(note => note.title.toLowerCase().includes(searchTerm.toLowerCase())).map((note) => (
         <div key={note.id} className="individual-note">
           <h1>{note.title}</h1>
           <p>{note.text}</p>
