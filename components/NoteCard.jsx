@@ -32,7 +32,7 @@ const NoteCard = () => {
   */
 
   return (
-    <div>
+    <div className="note-list">
       <select onChange={(e) => handleSorting(e.target.value)} className="sort-btn">
         <option value="title">Sort by name</option>
         <option value="date">Sort by date</option>

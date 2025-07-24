@@ -2,6 +2,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { Button, Input, Typography } from "antd";
+
+const { Title } = Typography;
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -11,51 +14,37 @@ const Login = () => {
   };
 
   return (
-    <div className="parent-container">
+    <div className="login-form">
       <div className="form-container">
-        <form className="form">
-          <h1>
-            Login
-          </h1>
-
+        <h1>Log in</h1>
+        <form>
           <div className="input-container">
-            <label>Email:</label>
-            <input
-              type="email"
-              placeholder="Enter Email"
+            <Title level={4}>Email</Title>
+            <Input placeholder="Email" type="email" />
+          </div>
+          <div className="input-container">
+            <Title level={4}>Password</Title>
+            <Input
+              placeholder="Email"
+              type={showPassword ? "text" : "password"}
             />
-          </div>
-
-          <div className="input-container">
-            <label>Password:</label>
-            <div style={{position: "relative"}}>
-              <input
-                type={showPassword ? "text" : "password"}
-                placeholder="Enter password"
+            <span className="span-field">
+              <FontAwesomeIcon
+                icon={showPassword ? faEye : faEyeSlash}
+                onClick={handleShowPassword}
               />
-              <span className="span-field">
-                <FontAwesomeIcon
-                  icon={showPassword ? faEye : faEyeSlash}
-                  onClick={handleShowPassword}
-                />
-              </span>
-            </div>
+            </span>
           </div>
-
-          <button className="btn">
-            Login
-          </button>
-
-          <p style={{textAlign: "center"}}>
-            Don't have an account?{" "}
-            <Link to="/signup" style={{textDecoration: "underline"}}>
-              Register
-            </Link>
-          </p>
+          <div className="btn-text">
+            <Title level={4}>
+              Don't have an account? <Link to="/register" style={{textDecoration: "underline"}}>Register</Link>
+            </Title>
+            <Button>Login</Button>
+          </div>
         </form>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Login
+export default Login;

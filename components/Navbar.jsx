@@ -18,7 +18,7 @@ const Navbar = () => {
       </div>
 
       <div className="nav-icons">
-        <Link to="/dashboard" style={{textDecoration: "none"}}>
+        <Link to="/" style={{textDecoration: "none"}}>
           <Title level={4} className="icon">
             <HomeOutlined className="home-icon" />
             Home

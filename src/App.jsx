@@ -1,17 +1,22 @@
 import Dashboard from "../components/Dashboard";
 import Login from "../components/Login";
 import Navbar from "../components/Navbar";
+import Register from "../components/Register";
 import NoteContext from "../Context/NoteContext";
 import { Route, Routes } from "react-router-dom";
+import SearchContext from "../Context/SearchContext";
 
 function App() {
   return (
     <NoteContext>
-      <Navbar />
-      <Routes>
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/login" element={<Login />} />
-      </Routes>
+      <SearchContext>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Dashboard />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+        </Routes>
+      </SearchContext>
     </NoteContext>
   );
 }

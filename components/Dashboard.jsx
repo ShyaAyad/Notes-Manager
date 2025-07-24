@@ -7,7 +7,6 @@ import NoteCard from "./NoteCard";
 const Dashboard = () => {
   return (
     <div className="dashboard">
-      {/* <Navbar /> */}
       <SearchBar />
       <Row className="note-editor">
         <NoteEditor />
