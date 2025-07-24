@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { noteContext } from "../Context/NoteContext";
 import { theSearchContext } from "../Context/SearchContext";
 import { Dropdown, Card } from "antd";
-import { DeleteOutlined, EditOutlined } from "@ant-design/icons"
+import { DeleteOutlined, EditOutlined } from "@ant-design/icons";
 
 const NoteCard = () => {
   const { notes, setNotes, deleteNote } = useContext(noteContext);
@@ -66,7 +66,9 @@ const NoteCard = () => {
             <h1>{note.title}</h1>
             <p>{note.text}</p>
             <div className="changing-btns">
-              <button className="edit-btn"><EditOutlined /></button>
+              <button className="edit-btn">
+                <EditOutlined />
+              </button>
               <button
                 onClick={() => deleteNote(note.id)}
                 className="delete-btn"

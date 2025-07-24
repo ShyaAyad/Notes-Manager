@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Button, Input, Typography } from "antd";
+import { Button, Form, Input, Typography } from "antd";
 
 const { Title } = Typography;
 
@@ -12,42 +12,60 @@ const Register = () => {
   const handleShowPassword = () => {
     setShowPassword((prev) => !prev);
   };
+
   return (
     <div className="login-form">
       <div className="form-container">
-        <h1>Sign up</h1>
-        <form>
-          <div className="input-container">
-            <Title level={4}>Username</Title>
-            <Input placeholder="User name" type="text" />
-          </div>
-          <div className="input-container">
-            <Title level={4}>Email</Title>
+        <Title>Sign up</Title>
+
+        <Form layout="vertical">
+          <Form.Item
+            label={<Title level={4}>Username</Title>} // like regular <label> component 
+            name="username"
+            rules={[{ required: true, message: "Please enter your username" }]} // will alert user to fill the reqired fileds
+          >
+            <Input placeholder="Username" />
+          </Form.Item>
+
+          <Form.Item
+            label={<Title level={4}>Email</Title>}
+            name="email"
+            rules={[{ required: true, message: "Please enter your email" }]}
+          >
             <Input placeholder="Email" type="email" />
-          </div>
-          <div className="input-container">
-            <Title level={4}>Password</Title>
+          </Form.Item>
+
+          <Form.Item
+            label={<Title level={4}>Password</Title>}
+            name="password"
+            rules={[{ required: true, message: "Please enter your password" }]}
+          >
             <Input
-              placeholder="Email"
+              placeholder="Password"
               type={showPassword ? "text" : "password"}
+              suffix={
+                <FontAwesomeIcon
+                  icon={showPassword ? faEye : faEyeSlash}
+                  onClick={handleShowPassword}
+                  style={{ cursor: "pointer" }}
+                />
+              }
             />
-            <span className="span-field-signup">
-              <FontAwesomeIcon
-                icon={showPassword ? faEye : faEyeSlash}
-                onClick={handleShowPassword}
-              />
-            </span>
-          </div>
+          </Form.Item>
+
           <div className="btn-text">
             <Title level={4}>
-              Already have an account?
+              Already have an account?{" "}
               <Link to="/login" style={{ textDecoration: "underline" }}>
                 Login
               </Link>
             </Title>
-            <Button>Sign up</Button>
+
+            <Button type="primary" htmlType="submit">
+              Sign up
+            </Button>
           </div>
-        </form>
+        </Form>
       </div>
     </div>
   );
