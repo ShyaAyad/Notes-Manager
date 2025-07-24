@@ -1,7 +1,8 @@
 import { useContext } from "react";
 import { noteContext } from "../Context/NoteContext";
 import { theSearchContext } from "../Context/SearchContext";
-import { Dropdown } from "antd";
+import { Dropdown, Card } from "antd";
+import { DeleteOutlined, EditOutlined } from "@ant-design/icons"
 
 const NoteCard = () => {
   const { notes, setNotes, deleteNote } = useContext(noteContext);
@@ -61,19 +62,19 @@ const NoteCard = () => {
       </Dropdown>
       {filteredNotes.length > 0 ? (
         filteredNotes.map((note) => (
-          <div key={note.id} className="individual-note">
+          <Card key={note.id} className="individual-note">
             <h1>{note.title}</h1>
             <p>{note.text}</p>
             <div className="changing-btns">
-              <button className="edit-btn">Edit</button>
+              <button className="edit-btn"><EditOutlined /></button>
               <button
                 onClick={() => deleteNote(note.id)}
                 className="delete-btn"
               >
-                Delete
+                <DeleteOutlined />
               </button>
             </div>
-          </div>
+          </Card>
         ))
       ) : (
         <p className="not-found">No note found!</p>

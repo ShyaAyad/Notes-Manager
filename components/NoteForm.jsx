@@ -1,4 +1,4 @@
-import { Button, Input, Typography } from "antd";
+import { Input, Typography } from "antd";
 import { useContext, useState } from "react";
 import { noteContext } from "../Context/NoteContext";
 
