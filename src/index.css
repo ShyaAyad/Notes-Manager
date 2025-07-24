@@ -159,9 +159,25 @@ body {
   overflow-y: scroll;
 }
 
+::-webkit-scrollbar{
+  background: #dedede;
+  border-radius: 20px;
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb{
+  background: black;
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+  background: rgb(70, 70, 70);
+}
+
 .sort-btn {
   position: sticky;
   top: 0;
+  margin-bottom: 10px;
   background-color: black;
   color: white;
   padding: 4px 8px;
