@@ -206,7 +206,7 @@ body {
   height: 100vh;
 }
 
-.edite-btn,
+.edit-btn,
 .delete-btn {
   padding: 4px 8px;
   border: 1px solid black;
@@ -219,7 +219,7 @@ body {
   transition: all 0.3s ease-out;
 }
 
-.edite-btn:hover,
+.edit-btn:hover,
 .delete-btn:hover{
   background-color: black;
   color: white;

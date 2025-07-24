@@ -4,7 +4,7 @@ import { noteContext } from "../Context/NoteContext";
 
 const { Title } = Typography;
 
-const NoteEditor = () => {
+const NoteForm = () => {
   const { addNotes } = useContext(noteContext);
 
   const [title, setTitle] = useState();
@@ -51,4 +51,4 @@ const NoteEditor = () => {
   );
 };
 
-export default NoteEditor;
+export default NoteForm;

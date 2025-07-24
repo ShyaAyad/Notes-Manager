@@ -25,6 +25,10 @@ const NoteContext = (props) => {
   }
 
   const editNotes = () => {
+    const editedNote = {
+      title,
+      text
+    };
 
   }
 

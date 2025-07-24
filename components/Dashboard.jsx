@@ -1,7 +1,6 @@
 import { Row } from "antd";
-import Navbar from "./Navbar";
 import SearchBar from "./SearchBar";
-import NoteEditor from "./NoteEditor";
+import NoteForm from "./NoteForm";
 import NoteCard from "./NoteCard";
 
 const Dashboard = () => {
@@ -9,7 +8,7 @@ const Dashboard = () => {
     <div className="dashboard">
       <SearchBar />
       <Row className="note-editor">
-        <NoteEditor />
+        <NoteForm />
       </Row>
       <div className="notes-list">
         <NoteCard />
