@@ -1,9 +1,7 @@
 import { useContext } from "react";
-import { noteContext } from "../Context/NoteContext";
 import { editContext } from "../Context/EditContext";
 
 const EditNote = () => {
-  const { notes, setNotes } = useContext(noteContext);
   const { titleValue, setTitleValue, content, setContent, handleEdit } = useContext(editContext);
 
   return (

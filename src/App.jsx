@@ -6,6 +6,7 @@ import NoteContext from "../Context/NoteContext";
 import { Route, Routes } from "react-router-dom";
 import SearchContext from "../Context/SearchContext";
 import EditContext from "../Context/EditContext";
+import { ToastContainer } from "react-toastify";
 
 function App() {
   return (
@@ -18,6 +19,17 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
           </Routes>
+          {/* ToastContainer should be placed outside of the routes and on top of the App component */}
+          <ToastContainer
+            position="top-right"
+            autoClose={3000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            pauseOnHover
+            draggable
+            theme="colored"
+          />
         </EditContext>
       </SearchContext>
     </NoteContext>
