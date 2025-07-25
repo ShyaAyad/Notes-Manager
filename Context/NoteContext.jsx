@@ -31,14 +31,6 @@ const NoteContext = (props) => {
     setNotes(filteredNotes);
   }
 
-  const editNotes = () => {
-    const editedNote = {
-      title,
-      text
-    };
-
-  }
-
   const values = { notes, setNotes, addNotes, deleteNote };
 
   return (

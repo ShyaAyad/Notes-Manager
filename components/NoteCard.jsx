@@ -2,11 +2,13 @@ import { useContext } from "react";
 import { noteContext } from "../Context/NoteContext";
 import { theSearchContext } from "../Context/SearchContext";
 import { Dropdown, Card } from "antd";
-import { DeleteOutlined, EditOutlined } from "@ant-design/icons";
+import { DeleteOutlined, DownOutlined, EditOutlined } from "@ant-design/icons";
+import { editContext } from "../Context/EditContext";
 
 const NoteCard = () => {
   const { notes, setNotes, deleteNote } = useContext(noteContext);
   const { searchTerm, setSearchTerm } = useContext(theSearchContext);
+  const { startEditing } = useContext(editContext);
 
   const sortByTitle = () => {
     // by spreading we change the new array leaving the original as it is
@@ -58,7 +60,7 @@ const NoteCard = () => {
           onClick: handleMenuClick,
         }}
       >
-        <button className="sort-btn">Sort</button>
+        <button className="sort-btn">Sort <DownOutlined style={{fontSize: "15px"}}/></button>
       </Dropdown>
       {filteredNotes.length > 0 ? (
         filteredNotes.map((note) => (
@@ -66,7 +68,7 @@ const NoteCard = () => {
             <h1>{note.title}</h1>
             <p>{note.text}</p>
             <div className="changing-btns">
-              <button onClick={() => handleEdit(note.id)} className="edit-btn">
+              <button onClick={() => startEditing(note.id)} className="edit-btn">
                 <EditOutlined />
               </button>
               <button
