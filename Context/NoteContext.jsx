@@ -9,7 +9,6 @@ const NoteContext = (props) => {
     const savedNotes = localStorage.getItem("note"); 
     return savedNotes ? JSON.parse(savedNotes) : []; // if note is saved then parse the note to an array else return an empty array
   }); // for storing the notes that user adds
-  console.log(notes);
 
   useEffect(() => { // useEffect re-renders whenever the note on save changes
     localStorage.setItem("note" ,JSON.stringify(notes)); 

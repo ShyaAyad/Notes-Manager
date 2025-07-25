@@ -7,7 +7,7 @@ import { editContext } from "../Context/EditContext";
 
 const NoteCard = () => {
   const { notes, setNotes, deleteNote } = useContext(noteContext);
-  const { searchTerm, setSearchTerm } = useContext(theSearchContext);
+  const { searchTerm } = useContext(theSearchContext);
   const { startEditing } = useContext(editContext);
 
   const sortByTitle = () => {

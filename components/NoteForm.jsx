@@ -1,5 +1,5 @@
 import { Input, Typography } from "antd";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { noteContext } from "../Context/NoteContext";
 import { editContext } from "../Context/EditContext";
 
@@ -15,7 +15,7 @@ const NoteForm = () => {
     content,
     setContent,
   } = useContext(editContext);
-  const isEditing = noteIdToEdit !== null;
+  const isEditing = noteIdToEdit !== null; // getting the id of the note to edit
 
   const submitNote = (e) => {
     e.preventDefault();
@@ -31,8 +31,8 @@ const NoteForm = () => {
       addNotes(titleValue, content);
     }
 
-    setTitle('')
-    setText('')
+    setTitleValue('')
+    setContent('')
   };
 
   return (

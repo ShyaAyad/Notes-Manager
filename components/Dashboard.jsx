@@ -10,9 +10,9 @@ const Dashboard = () => {
       <Row className="note-editor">
         <NoteForm />
       </Row>
-      <div className="notes-list">
+      <Row className="notes-list">
         <NoteCard />
-      </div>
+      </Row>
     </div>
   );
 };
